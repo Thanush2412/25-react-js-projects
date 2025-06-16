@@ -1,0 +1,59 @@
+﻿{
+    "version": 2,
+    "builds": [
+        {
+            "src": "package.json",
+            "use": "@vercel/static-build",
+            "config": {
+                "distDir": "build"
+            }
+        }
+    ],
+    "routes": [
+        {
+            "src": "/static/(.*)",
+            "dest": "/static/$1"
+        },
+        {
+            "src": "/favicon.ico",
+            "dest": "/favicon.ico"
+        },
+        {
+            "src": "/manifest.json",
+            "dest": "/manifest.json"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/index.html"
+        }
+    ],
+    "rewrites": [
+        { "source": "/project-01/:path*", "destination": "/project-01/build/:path*" },
+        { "source": "/project-02/:path*", "destination": "/project-02/build/:path*" },
+        { "source": "/project-03/:path*", "destination": "/project-03/build/:path*" },
+        { "source": "/project-04/:path*", "destination": "/project-04/build/:path*" },
+        { "source": "/project-05/:path*", "destination": "/project-05/build/:path*" },
+        { "source": "/project-06/:path*", "destination": "/project-06/build/:path*" },
+        { "source": "/project-07/:path*", "destination": "/project-07/build/:path*" },
+        { "source": "/project-08/:path*", "destination": "/project-08/build/:path*" },
+        { "source": "/project-09/:path*", "destination": "/project-09/build/:path*" },
+        { "source": "/project-10/:path*", "destination": "/project-10/build/:path*" },
+        { "source": "/project-11/:path*", "destination": "/project-11/build/:path*" },
+        { "source": "/project-12/:path*", "destination": "/project-12/build/:path*" },
+        { "source": "/project-13/:path*", "destination": "/project-13/build/:path*" },
+        { "source": "/project-14/:path*", "destination": "/project-14/build/:path*" },
+        { "source": "/project-15/:path*", "destination": "/project-15/build/:path*" },
+        { "source": "/project-16/:path*", "destination": "/project-16/build/:path*" },
+        { "source": "/project-17/:path*", "destination": "/project-17/build/:path*" },
+        { "source": "/project-18/:path*", "destination": "/project-18/build/:path*" },
+        { "source": "/project-19/:path*", "destination": "/project-19/build/:path*" },
+        { "source": "/project-20/:path*", "destination": "/project-20/build/:path*" },
+        { "source": "/project-21/:path*", "destination": "/project-21/build/:path*" },
+        { "source": "/project-22/:path*", "destination": "/project-22/build/:path*" },
+        { "source": "/project-23/:path*", "destination": "/project-23/build/:path*" },
+        { "source": "/project-24/:path*", "destination": "/project-24/build/:path*" },
+        { "source": "/project-25/:path*", "destination": "/project-25/build/:path*" }
+    ],
+    "cleanUrls": true,
+    "trailingSlash": false
+}
