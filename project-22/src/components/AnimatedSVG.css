@@ -1,0 +1,252 @@
+.animated-svg-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+  text-align: center;
+}
+
+.animated-svg-container h2 {
+  color: #2c3e50;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.description {
+  color: #2c3e50;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.8;
+}
+
+.game-header {
+  margin-bottom: 2rem;
+}
+
+.game-header h2 {
+  color: #2c3e50;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.game-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 1.2rem;
+  color: #2c3e50;
+}
+
+.score, .timer {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.svg-wrapper {
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.svg-wrapper:hover {
+  transform: scale(1.02);
+}
+
+.animated-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.background-circle {
+  fill: url(#bg-gradient);
+  stroke: rgba(255, 255, 255, 0.8);
+  stroke-width: 2;
+}
+
+.target-circle {
+  fill: #e74c3c;
+  stroke: #c0392b;
+  stroke-width: 2;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.target-circle:hover {
+  transform: scale(1.1);
+}
+
+.target-circle:active {
+  transform: scale(0.95);
+}
+
+.center-circle {
+  fill: #3498db;
+  filter: drop-shadow(0 2px 4px rgba(52, 152, 219, 0.3));
+}
+
+.animated-line {
+  stroke: rgba(74, 144, 226, 0.6);
+  stroke-width: 2;
+  animation: linePulse 2s infinite;
+}
+
+.pulsing-circle {
+  fill: none;
+  stroke: rgba(74, 144, 226, 0.3);
+  stroke-width: 2;
+  animation: pulse 2s infinite;
+}
+
+.controls {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.control-button {
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  background: rgba(52, 152, 219, 0.8);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  font-weight: 600;
+}
+
+.control-button:hover {
+  background: rgba(52, 152, 219, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+.game-over {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 2rem;
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.game-over h3 {
+  color: #2c3e50;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.game-over p {
+  color: #2c3e50;
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Animations */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+}
+
+@keyframes linePulse {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+.animated-svg.hovered .animated-circle {
+  stroke: #e74c3c;
+}
+
+.animated-svg.hovered .center-circle {
+  fill: #e74c3c;
+}
+
+.animated-svg.hovered .animated-line {
+  stroke: rgba(231, 76, 60, 0.6);
+}
+
+.particle {
+  transition: transform 0.1s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.particle:hover {
+  transform: scale(1.2);
+}
+
+.mouse-area {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.2);
+  stroke-width: 2;
+  pointer-events: none;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .animated-svg-container {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .svg-wrapper {
+    width: 300px;
+    height: 300px;
+  }
+
+  .animated-svg-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .game-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .game-stats {
+    font-size: 1rem;
+    gap: 1rem;
+  }
+
+  .control-button {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+} 

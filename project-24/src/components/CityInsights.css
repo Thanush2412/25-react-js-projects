@@ -1,0 +1,242 @@
+.city-insights {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.insights-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.insights-header h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  background: linear-gradient(45deg, #00b4db, #0083b0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+}
+
+.time-select {
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.time-select:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.refresh-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: #00b4db;
+  color: #fff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.refresh-btn:hover:not(:disabled) {
+  background: #0083b0;
+  transform: translateY(-1px);
+}
+
+.refresh-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.error-message {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: rgba(255, 0, 0, 0.1);
+  border: 1px solid rgba(255, 0, 0, 0.2);
+  border-radius: 0.5rem;
+  color: #ff6b6b;
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 0.8rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+}
+
+.stat-card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  color: #00b4db;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.map-container {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 0.8rem;
+  padding: 1rem;
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+
+/* Leaflet map customization */
+.leaflet-container {
+  background: #1a1a2e !important;
+  border-radius: 0.5rem;
+}
+
+.leaflet-popup-content-wrapper {
+  background: rgba(26, 26, 46, 0.95);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  border-radius: 0.5rem;
+}
+
+.leaflet-popup-tip {
+  background: rgba(26, 26, 46, 0.95);
+}
+
+.popup-content {
+  padding: 0.5rem;
+}
+
+.popup-content h3 {
+  margin: 0 0 0.5rem 0;
+  color: #00b4db;
+}
+
+.popup-content p {
+  margin: 0.25rem 0;
+  color: #fff;
+}
+
+.city-details {
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 0.8rem;
+}
+
+.city-details h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+  color: #fff;
+  text-align: center;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.detail-item:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.detail-label {
+  font-size: 0.9rem;
+  color: #00b4db;
+}
+
+.detail-value {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.performance-tips {
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 0.8rem;
+}
+
+.performance-tips h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.2rem;
+  color: #00b4db;
+}
+
+.performance-tips ul {
+  margin: 0;
+  padding-left: 1.5rem;
+  color: #fff;
+}
+
+.performance-tips li {
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .city-insights {
+    padding: 1rem;
+  }
+
+  .insights-header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .map-container {
+    aspect-ratio: 16/9;
+  }
+
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+} 
